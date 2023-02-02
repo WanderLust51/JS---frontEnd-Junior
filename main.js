@@ -1,23 +1,31 @@
-var superNum;
-var otherNum;
+var descuento;
+var edad = Math.round(Math.random() * (75 - 0) + 0);
+var dolar = 22.41;
 
-superNum = 15;
-otherNum = 8;
+var sexo = "F"
+descuento = 1
 
-var bigNum = superNum + otherNum;
+if (edad <= 2){
+    descuento = 0,100;
 
-var newNum = 5;
-newNum += bigNum;
+}
+if (edad >= 3 && edad <= 6){
+    descuento = 0,50;
 
-console.log('La variable newNum es la suma de newNum (5) y bigNum (23)')
-console.log(`Resultado de newNum = ${newNum}`)
+}
+if (edad >= 7 && edad <= 15){
+    descuento = 0,25;
 
-var randNum
-randNum = Math.random() * (superNum - otherNum) + otherNum
-console.log(`randNum es: ${randNum}`)
-console.log(`randNum con toFixed es: ${randNum.toFixed(2)}`)
-console.log(`randNum con toPrecision es: ${randNum.toPrecision(2)}}`)
-console.log(`randNum redondeado es: ${Math.ceil(randNum)}`)
-console.log(`randNum redondeado abajo es: ${Math.floor(randNum)}`)
+}
+else{
+    if ((sexo == "F" && edad >= 55 ) || (sexo == "M" && edad >= 60)){
+        descuento = 0,30;
+    }
+}
 
-console.log(`El valor de los tickets es de: ${Math.round(Math.random() * 100)}`)
+var precio = (17 * dolar) * descuento;
+
+console.log(`Edad: ${edad}`)
+console.log(sexo)
+console.log(`Descuento: ${descuento}`)
+console.log(`El precio final es ${precio}`)

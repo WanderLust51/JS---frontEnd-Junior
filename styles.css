@@ -9,6 +9,8 @@ body{
 }
 
 #happiness:hover{
-    color: rgb(180, 31, 135);
+    color: rgb(228, 60, 178);
+    text-shadow: 0 0 120px rgba(0, 0, 0, 0.363);
+    
     transition: 0.4s;
 }

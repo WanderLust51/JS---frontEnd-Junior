@@ -1,3 +1,14 @@
 body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+#happiness{
+    display: flex;
+    font-size: 80px;
+    justify-content: center;
+    transition: 0.4s;
+}
+
+#happiness:hover{
+    color: rgb(180, 31, 135);
+    transition: 0.4s;
+}

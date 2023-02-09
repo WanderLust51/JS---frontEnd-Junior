@@ -1,31 +1,63 @@
-var descuento;
-var edad = Math.round(Math.random() * (75 - 0) + 0);
-var dolar = 22.41;
 
-var sexo = "F"
-descuento = 1
 
-if (edad <= 2){
-    descuento = 0,100;
+var cliente = "";
+var cantidad = 0;
+var talla = "";
+var descuento = 0;
+var precioUnitario = 0;
+var montoDescuento = 0;
+var total = 0;
+var valid = true;
+
+
+//Entradas
+cliente = prompt('Ingrese su nombre');
+do{
+    cantidad = parseInt(prompt('Indique la cantidad de franelas a comprar'));
 
 }
-if (edad >= 3 && edad <= 6){
-    descuento = 0,50;
+while(isNaN(cantidad))
 
-}
-if (edad >= 7 && edad <= 15){
-    descuento = 0,25;
-
-}
-else{
-    if ((sexo == "F" && edad >= 55 ) || (sexo == "M" && edad >= 60)){
-        descuento = 0,30;
+do{
+    talla = prompt('Elija la talla [S, M, L y XL]').toUpperCase();
+    switch(talla){
+        case 'S':
+            precioUnitario = 50000;
+            valid = true;
+            break;
+        case 'M':
+            precioUnitario = 55000;
+            valid = true;
+            break;
+        case 'L':
+            precioUnitario = 60000;
+            valid = true;
+            break;
+        case 'XL':
+            precioUnitario = 65000;
+            valid = true;
+            break;
+        default:
+            alert('Aprende a leer pibe')
+            valid = false;
     }
 }
+while(!valid)
 
-var precio = (17 * dolar) * descuento;
 
-console.log(`Edad: ${edad}`)
-console.log(sexo)
-console.log(`Descuento: ${descuento}`)
-console.log(`El precio final es ${precio}`)
+if (cantidad >= 6 && cantidad <= 11){
+    montoDescuento = precioUnitario * 0.05;
+    descuento = '5%'
+}
+if (cantidad >= 12 && cantidad <= 24){
+    montoDescuento = precioUnitario * 0.10;
+    descuento = '10%'
+}
+if (cantidad > 24){
+    montoDescuento = precioUnitario * 0.15;
+    descuento = '15%'
+}
+
+total = precioUnitario - montoDescuento;
+
+alert(`Cliente: ${cliente} - | - Cantidad: ${cantidad} - | - Talla: ${talla}\nPrecio de la unidad (${precioUnitario}) - Monto del descuento: ${montoDescuento} - (${descuento})\nTotal: ${total}`)

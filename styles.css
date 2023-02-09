@@ -1,16 +1,19 @@
-body{
+*{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #happiness{
     display: flex;
     font-size: 80px;
     justify-content: center;
+    margin-top: 34vh;
     transition: 0.4s;
 }
 
 #happiness:hover{
-    color: rgb(228, 60, 178);
-    text-shadow: 0 0 120px rgba(0, 0, 0, 0.363);
-    
+    color: #ff4372;
+    text-shadow: 0 0 120px rgba(143, 15, 90, 0.63);
+    font-size: 120px;
+    transform: rotate(5deg);
+
     transition: 0.4s;
 }

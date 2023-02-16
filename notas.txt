@@ -1,0 +1,10 @@
+Metodos y funciones de arreglos en JS:
+
+    arreglo.push(x) añade x a la ultima posición
+    arreglo.inludes(x) devuelve true si x existe
+    arreglo.indexOf(x) devuelve la posición de x (en su defecto -1)
+    arreglo.lastIndexOf(x) lo mismo pero recorriendo del ultimo al primero
+    arreglo.pop() elimina el último elemento y lo retorna
+    arreglo.shift() elimina el primer elemento y lo retorna
+    arreglo
+    arreglo

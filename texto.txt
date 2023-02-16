@@ -1,5 +1,9 @@
-Una fábrica produce 4 tallas de franelas cuyos precios son: Talla Precio (Bs.) S 50000 M 55000 L 60000 XL 65000  La fábrica tiene la siguiente política de descuento según la cantidad de unidades a comprar: Entre 6 y 11 unidades tendrá un descuento del 5% Entre 12 y 24 unidades tendrá un descuento del 10% Más de 2 docenas el descuento será del 15%. 
+Tenemos una seccion de N alumnos, los nombres de los alumnos deben guardarse en un arreglo. Ademas las notas deben guardarse en un arrglo para cada conjunto de notas. Vamos a suponer que nuestra seccion tiene 3 evaluaciones.
 
-Teniendo los siguientes datos de una operación de compra: nombre del cliente, cantidad de unidades a comprar y talla de franela seleccionada; deben generarse las siguientes salidas: nombre del cliente, cantidad de unidades solicitadas, monto del descuento (incluya el porcentaje) y monto a pagar. NOTA: En una operación de compra sólo se compra una sola talla.
+1. solicitar al usuario el numero de alumnos a 
 
-Switch - Operador Ternario ( ? : ) - conversiones de String.
+2. solicitar la cedula del alumno, nombre, nota1, nota2, nota3
+
+3. Validar que la cedula no ha sido registrada, en caso contrario indicar que ya estaba registrada y volver a preguntar (validación)
+
+4. Asegurarse de que al solicitar los datos se esté ingresando los datos referidos del alumno.

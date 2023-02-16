@@ -1,63 +1,49 @@
+var cantAlumnos;
+var alumnoCedula = [];
+var alumnoNombre = [];
+var notas1 = [];
+var notas2 = [];
+var notas3 = [];
 
+var nota1
+var nota2
+var nota3
 
-var cliente = "";
-var cantidad = 0;
-var talla = "";
-var descuento = 0;
-var precioUnitario = 0;
-var montoDescuento = 0;
-var total = 0;
-var valid = true;
-
-
-//Entradas
-cliente = prompt('Ingrese su nombre');
-do{
-    cantidad = parseInt(prompt('Indique la cantidad de franelas a comprar'));
-
-}
-while(isNaN(cantidad))
+var cedulaValida = false;
 
 do{
-    talla = prompt('Elija la talla [S, M, L y XL]').toUpperCase();
-    switch(talla){
-        case 'S':
-            precioUnitario = 50000;
-            valid = true;
-            break;
-        case 'M':
-            precioUnitario = 55000;
-            valid = true;
-            break;
-        case 'L':
-            precioUnitario = 60000;
-            valid = true;
-            break;
-        case 'XL':
-            precioUnitario = 65000;
-            valid = true;
-            break;
-        default:
-            alert('Aprende a leer pibe')
-            valid = false;
+    cantAlumnos = parseInt(prompt('Cantidad de alumnos:'));
+
+}while(cantAlumnos <= 0 || isNaN(cantAlumnos))
+
+for (i = 0; i < cantAlumnos; i++){
+    
+    cedula = parseInt(prompt(`Nº ${i + 1}. Ingrese la Cedula`));
+
+    while (alumnoCedula.includes(cedula)){
+        cedula = parseInt(prompt('La cedula ya está registrada.'));
     }
-}
-while(!valid)
+    alumnoCedula.push(cedula);
 
 
-if (cantidad >= 6 && cantidad <= 11){
-    montoDescuento = precioUnitario * 0.05;
-    descuento = '5%'
-}
-if (cantidad >= 12 && cantidad <= 24){
-    montoDescuento = precioUnitario * 0.10;
-    descuento = '10%'
-}
-if (cantidad > 24){
-    montoDescuento = precioUnitario * 0.15;
-    descuento = '15%'
+
+
+    nombre = prompt('Ingrese el Nombre');
+    alumnoNombre.push(nombre);
+
+    nota1 = parseInt(prompt('Ingrese la nota 1'));
+    notas1.push(nota1);
+
+    nota2 = parseInt(prompt('Ingrese la nota 2'));
+    notas2.push(nota2);
+
+    nota3 = parseInt(prompt('Ingrese la nota 3'));
+    notas3.push(nota3);
+
 }
 
-total = precioUnitario - montoDescuento;
-
-alert(`Cliente: ${cliente} - | - Cantidad: ${cantidad} - | - Talla: ${talla}\nPrecio de la unidad (${precioUnitario}) - Monto del descuento: ${montoDescuento} - (${descuento})\nTotal: ${total}`)
+console.log(`Cedula: ${alumnoCedula[0]}`)
+console.log(`Alumno: ${alumnoNombre[0]}`)
+console.log(`Nota1: ${notas1[0]}`)
+console.log(`Nota2: ${notas2[0]}`)
+console.log(`Nota3: ${notas3[0]}`)

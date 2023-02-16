@@ -1,19 +1,30 @@
 *{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.center{
+    display: block;
+    margin: 30vh 40%;
+}
 #happiness{
-    display: flex;
-    font-size: 80px;
-    justify-content: center;
-    margin-top: 34vh;
+    display: block;
+    position: absolute;
+    font-size: 120px;
     transition: 0.4s;
 }
 
 #happiness:hover{
     color: #ff4372;
     text-shadow: 0 0 120px rgba(143, 15, 90, 0.63);
-    font-size: 120px;
+    font-size: 160px;
     transform: rotate(5deg);
 
     transition: 0.4s;
+}
+
+#love{
+    display: block;
+    position:relative;
+    justify-content: center;
+    top: 20px;
 }

@@ -42,8 +42,8 @@ for (i = 0; i < cantAlumnos; i++){
 
 }
 
-console.log(`Cedula: ${alumnoCedula[0]}`)
-console.log(`Alumno: ${alumnoNombre[0]}`)
-console.log(`Nota1: ${notas1[0]}`)
-console.log(`Nota2: ${notas2[0]}`)
-console.log(`Nota3: ${notas3[0]}`)
+console.log(`Cedula: ${alumnoCedula[0]}`);
+console.log(`Alumno: ${alumnoNombre[0]}`);
+console.log(`Nota1: ${notas1[0]}`);
+console.log(`Nota2: ${notas2[0]}`);
+console.log(`Nota3: ${notas3[0]}`);

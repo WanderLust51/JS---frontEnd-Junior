@@ -1,19 +1,31 @@
 *{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
-.center{
+body{
     display: block;
-    margin: 30vh 40%;
+    align-items: center;
+    height: fit-content;
+    justify-content: center;
+}
+.center{
+    display: flex;
+    margin-top: 30vh;
+    margin-right: 20%;
+    margin-left: 20%;
+    height: 200px;
+    /* background-color: rgba(0, 0, 0, 0.11); */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 #happiness{
     display: block;
-    position: absolute;
+    position: static;
     font-size: 120px;
     transition: 0.4s;
 }
 
-#happiness:hover{
+.center:hover #happiness{
     color: #ff4372;
     text-shadow: 0 0 120px rgba(143, 15, 90, 0.63);
     font-size: 160px;
@@ -23,8 +35,33 @@
 }
 
 #love{
-    display: block;
-    position:relative;
+    color: rgba(0, 0, 0, 0.068);
+    font-size: 120px;
+    display: flex;
+    position:absolute;
     justify-content: center;
-    top: 20px;
+    margin: 0vh 0%;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+.center:hover #love{
+    font-size: 200px;
+    margin-bottom: 40px;
+    transition-duration: 0.4s;
+    letter-spacing: -2px;
+    color: rgba(206, 138, 147, 0.349);
+}
+
+.content{
+    display: flex;
+    /* margin: 30vh 0; */
+    height: 200px;
+    /* background-color: rgba(0, 0, 0, 0.11); */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.content > *{
+    height: 30px;
 }

@@ -1,0 +1,12 @@
+Objeto WINDOW
+
+propiedades y objetos de WINDOW:
+
+document = DOM
+history
+location
+frames
+screen
+navigator
+scrollX
+scrollY

@@ -26,7 +26,7 @@ body{
 }
 
 .center:hover #happiness{
-    color: #ff4372;
+    color: #ff4ac3;
     text-shadow: 0 0 120px rgba(143, 15, 90, 0.63);
     font-size: 160px;
     transform: rotate(5deg);

@@ -30,15 +30,16 @@ function ctxResume(){
 
 function highEnergy(){
     var i = 400;
-    for (i=400; i <= 20000; i += 40){
-        filter.frequency.value = i}
+    for (i=400; i <= 20000; i += 20){
+        filter.frequency.value = i
+    }
     
     filter.frequency.value = 20000;
     console.log('Hype');
 }
 function lowEnergy(){
     var i = 20000;
-    for (i=20000; i >= 400; i -= 40){
+    for (i=20000; i >= 400; i -= 20){
         filter.frequency.value = i
     }
     

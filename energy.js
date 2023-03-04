@@ -12,41 +12,33 @@ const osc = audioCtx.createOscillator();
 osc.type = 'sawtooth';
 
 const filter = audioCtx.createBiquadFilter();
-filter.frequency.value = 800;
+filter.frequency.value = 400;
 
-source.connect(filter);
+osc.connect(filter);
 filter.connect(audioCtx.destination);
-
-
 
 
 function ctxResume(){
     console.log('resume')
-    // osc.start(0);
     audioCtx.resume();
-    // osc.stop(2);
+    // osc.start(0);
+    // osc.stop(10);
 }
 
+function highEnergy(){
+    var i = 400;
+    for (i=400; i <= 20000; i += 40){filter.frequency.value = i; console.log(i)}
+    
+    filter.frequency.value = 20000;
+    console.log('Hype');
+}
+function lowEnergy(){
+    var i = 20000;
+    for (i=20000; i >= 400; i -= 40){filter.frequency.value = i}
+    
+    filter.frequency.value = 400;
+    console.log('Low');
+}
 
-
-
-
-
-// fetch(audioElement).then(data => data.arrayBuffer).then(arrayBuffer => audioCtx.decodeAudioData(arrayBuffer)).then(decodedAudio => {audio = decodedAudio});
-
-
-
-
-
-// let audioStream = new MediaStream(audioElement) 
-
-// let source = audioCtx.createMediaStreamSource(audioStream)
-
-// let gainNode = audioCtx.createGain();
-
-
-
-// source.connect(gainNode)
-// gainNode.connect(audioCtx.destination);
 
 

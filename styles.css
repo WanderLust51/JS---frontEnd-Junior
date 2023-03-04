@@ -54,6 +54,7 @@ body{
 
 .content{
     display: flex;
+    flex-direction: column;
     /* margin: 30vh 0; */
     height: 200px;
     /* background-color: rgba(0, 0, 0, 0.11); */
@@ -62,6 +63,27 @@ body{
     align-items: center;
 }
 
+#energyBtn{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    height: 100%;
+    width: 50px;
+    background-color: #ff4ac3;
+
+    border-radius: 5px;
+}
+
+.line{
+    display: flex;
+    align-items: center;
+}
+.line > *{
+    height: 40px;
+}
 .content > *{
-    height: 30px;
+    height: 40px;
+    margin: 20px 0;
 }

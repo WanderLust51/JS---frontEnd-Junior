@@ -1,13 +1,52 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/BiquadFilterNode
 
-let audioCtx;
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
 const audioElement = document.querySelector("audio");
+audioElement.crossOrigin = "anonymous";
 
-const gainNode = new GainNode(audioCtx);
+// let audioStream = new MediaStream(audioElement);
+const source = audioCtx.createMediaElementSource(audioElement);
 
-const biquadFilter = audioCtx.createBiquadFilter();
+const osc = audioCtx.createOscillator();
+osc.type = 'sawtooth';
 
-biquadFilter.type = "lowshelf";
-biquadFilter.frequency.value = 0.9;
-biquadFilter.gain.value = 25;
+const filter = audioCtx.createBiquadFilter();
+filter.frequency.value = 800;
+
+source.connect(filter);
+filter.connect(audioCtx.destination);
+
+
+
+
+function ctxResume(){
+    console.log('resume')
+    // osc.start(0);
+    audioCtx.resume();
+    // osc.stop(2);
+}
+
+
+
+
+
+
+// fetch(audioElement).then(data => data.arrayBuffer).then(arrayBuffer => audioCtx.decodeAudioData(arrayBuffer)).then(decodedAudio => {audio = decodedAudio});
+
+
+
+
+
+// let audioStream = new MediaStream(audioElement) 
+
+// let source = audioCtx.createMediaStreamSource(audioStream)
+
+// let gainNode = audioCtx.createGain();
+
+
+
+// source.connect(gainNode)
+// gainNode.connect(audioCtx.destination);
+
+

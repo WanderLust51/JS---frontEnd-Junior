@@ -20,10 +20,37 @@
     </div>
     <div class="content">
         <div class="line">
-            <input placeholder="holis">
-            <button>Supa boton</button>
+            <input placeholder="Este es un input">
+            <button id="superBtn">Y este el botón</button>
         </div>
+        <div class="line">
+            <h1 id="superTitulo">"Donde está mi super traje" </h1>
+            <button onclick="superFuncion()">The Title</button>
+            <button onclick="superColor()">The Color</button>
+        </div>
+    </div>
+    <div class="content">
+        <form action="" name="factura">
+            <div class="line">
+                <label for="">nombre:</label>
+                <input placeholder="el nombre va aquí" type="text" name="nombre">
+            </div>
+            <div class="line">
+                <label for="">descripción:</label>
+                <input placeholder="la descripción" type="text" name="descripcion">
+            </div>
+            <div class="line">
+                <label for="">precio:</label>
+                <input placeholder="precio aquí" type="text" name="precio">
+            </div>
+            <div class="line">
+                <label for="">cantidad:</label>
+                <input placeholder="cantidad" type="text" name="cantidad">
+            </div>
+            <input type="button" onclick="facturar()" value="facturar">
+        </form>
 
+        <section id="facturaFinal"></section>
     </div>
 
 
@@ -37,8 +64,6 @@
     </script>
 
 
-
-    <script src="energy.js"></script>
 </body>
 
 </html>

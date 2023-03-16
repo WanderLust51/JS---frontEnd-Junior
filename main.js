@@ -39,6 +39,6 @@ function facturar(){
     let precio = superfactura.precio.value;
     let cantidad = superfactura.cantidad.value;
 
-    facturaFinal.innerHTML = `<p>${nombre}</p>`
     console.log(facturaFinal)
+    facturaFinal.innerHTML = `<p>Nombre: ${nombre}</p> <p>Descripción: ${desc}</p> <p>Total: ${precio}</p>`
 }

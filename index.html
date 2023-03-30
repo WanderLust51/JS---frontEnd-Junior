@@ -51,16 +51,35 @@
         
         <section id="facturaFinal"></section>
     </div>
+
+    <div class="content" id="newLife">
+
+    </div>
+
+    <div class="content" id="tables">
+        <div style="height: fit-content">
+            <label for="Cedula">Cedula:</label> <input type="text" id="Cedula"><br><br>
+            <label for="Nombre">Nombre:</label> <input type="text" id="Nombre"><br><br>
+            <label for="Materia">Materia:</label> <input type="text" id="Materia"><br><br>
+            <label for="Calificacion">Calificación:</label> <input type="text" id="Calificacion"><br><br>
+            <button onclick="addRow()">The table button</button>
+        </div>
+
+        <table id="superTable">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </table>
+    </div>
     
 
     
     <script>
-        function calcularAlgo(){
-            let a = parseInt(prompt('Valor de A:'));
-            let b = parseInt(prompt('Valor de A:'));
-            alert(`La suma es ${a+b}`)
-        }
-        </script>
+
+    </script>
 
 
 <script src="main.js"></script>

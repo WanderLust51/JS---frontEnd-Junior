@@ -6,6 +6,7 @@ body{
     align-items: center;
     height: fit-content;
     justify-content: center;
+    /* margin-bottom: 1rem; */
 }
 .center{
     display: flex;
@@ -95,7 +96,7 @@ form{
     justify-content: start;
     padding: 10px 10px;
     height: fit-content !important;
-    background-color: rgba(238, 130, 238, 0.438);
+    background-color: rgba(238, 130, 238, 0.333);
     border-radius: 10px;
 }
 form label{

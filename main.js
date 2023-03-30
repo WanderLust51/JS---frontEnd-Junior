@@ -1,9 +1,11 @@
-superBtn = document.getElementById('superBtn')
+superBtn = document.getElementById('superBtn');
 
-superBtn.addEventListener('click', presion)
+superBtn.addEventListener('click', presion);
+
+createLife();
 
 function presion(){
-    console.log('Me siento presionado')
+    console.log('Me siento presionado');
 }
 
 function abrirVentanita(){
@@ -41,4 +43,47 @@ function facturar(){
 
     console.log(facturaFinal)
     facturaFinal.innerHTML = `<p>Nombre: ${nombre}</p> <p>Descripción: ${desc}</p> <p>Total: ${precio}</p>`
+}
+
+function createLife(){
+    var lifeObj = document.getElementById('newLife');
+    var newInput = document.createElement('input');
+    var newBtn = document.createElement('button');
+    var newList = document.createElement('ul');
+
+    newList.style.backgroundColor = 'rgba(238, 130, 238, 0.200)';
+    newList.style.height = 'fit-content'
+
+    var btnText = document.createTextNode('The button');
+    newBtn.appendChild(btnText);
+
+    newBtn.addEventListener('click', function(){
+        var newLi = document.createElement('li');
+        var inputContent = document.createTextNode(newInput.value);
+
+        newLi.appendChild(inputContent);
+
+        newList.appendChild(newLi);
+    })
+    lifeObj.appendChild(newBtn);
+    lifeObj.appendChild(newInput);
+    lifeObj.appendChild(newList);
+}
+
+function addRow(){
+    var tableObj = document.getElementById('superTable');
+    
+    dataArray = [];
+
+    dataArray[0] = document.getElementById('Cedula').value;
+    dataArray[1] = document.getElementById('Nombre').value;
+    dataArray[2] = document.getElementById('Materia').value;
+    dataArray[3] = document.getElementById('Calificacion').value;
+
+
+    var newRow = tableObj.insertRow(-1);
+    for (let i = 0; i < dataArray.length; i++){
+        let newCell = newRow.insertCell(dataArray[-1]);
+        newCell.innerText = dataArray[i];
+    }
 }

@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="content">
-        <form action="" name="factura">
+        <form action="" id="factura">
             <div class="line">
                 <label for="">nombre:</label>
                 <input placeholder="el nombre va aquí" type="text" name="nombre">
@@ -73,6 +73,28 @@
                 <td>4</td>
             </tr>
         </table>
+    </div>
+
+    <div class="content">
+        <form action="" method="GET" id="newForm" onsubmit="return controlForm()">
+            <div class="line">
+                <label for="">Nombre de usuario</label>
+                <input type="text" name="usuario">
+            </div>
+            <div class="line">
+                <label for="">Correo</label>
+                <input type="text" name="correo">
+            </div>
+            <div class="line">
+                <label for="">Contraseña</label>
+                <input type="password" name="clave">
+            </div>
+            <div class="line">
+                <label for="">Teléfono</label>
+                <input type="text" name="telefono">
+            </div>
+            <input type="submit" value="Enviar">
+        </form>
     </div>
     
 

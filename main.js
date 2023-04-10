@@ -87,3 +87,44 @@ function addRow(){
         newCell.innerText = dataArray[i];
     }
 }
+
+// CLASE 2
+
+function controlForm(){
+    form = document.getElementById('newForm');
+    if (
+        formValidation(form.usuario, 'mira desgraciado quien tuere') == true ||
+        formValidationEmail(form.correo, 'mira desgraciado tu correo') == true ||
+        formValidation(form.clave, 'mira desgraciado la clave cual e') == true ||
+        formValidation(form.telefono, 'mira desgraciado y tu número?') == true
+    ){
+        console.log('mal hecho')
+        return false;
+    }
+    else{
+        console.log('Se envió el peo jaja');
+        return true
+    }
+}
+
+
+function formValidation(input, msg){
+    if (input.value == ''){
+        window.alert(msg);
+        return true
+    }else{
+        return false
+    }
+}
+
+function formValidationEmail(input, msg){
+    let regularExp = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gim;
+    if (input.value == '' || !regularExp.test(input.value)){
+        window.alert(msg);
+        return true
+    }else{
+        return false
+    }
+}
+
+

@@ -104,10 +104,20 @@ form label{
     align-items: center;
 }
 
+input{
+    border: 1px solid rgba(121, 121, 121, 0.555);
+    border-radius: 3px;
+}
+
 form > .line{
     margin: 5px 0;
 }
 form > input[type=button]{
+    height: 40px;
+    margin: 10px 0;
+    text-align: center;
+}
+form > input[type=submit]{
     height: 40px;
     margin: 10px 0;
     text-align: center;

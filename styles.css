@@ -64,16 +64,9 @@ body{
 }
 
 #energyBtn{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
     color: white;
-    height: 100%;
-    width: 50px;
+    /* width: 50px; */
     background-color: #ff4ac3;
-
-    border-radius: 5px;
 }
 
 .line{

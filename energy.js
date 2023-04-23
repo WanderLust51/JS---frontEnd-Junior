@@ -3,11 +3,11 @@
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
 
-const audioElement = document.querySelector("audio");
+let audioElement = document.querySelector("audio");
 audioElement.crossOrigin = "anonymous";
 
 // let audioStream = new MediaStream(audioElement);
-const source = audioCtx.createMediaElementSource(audioElement);
+let source = audioCtx.createMediaElementSource(audioElement);
 
 const osc = audioCtx.createOscillator();
 osc.type = 'sawtooth';
@@ -42,9 +42,10 @@ function highEnergy(){
     var i = 320;
     gainNode.gain.value = lowGain;
 
-    filter.frequency.exponentialRampToValueAtTime(20000, source.context.currentTime + 0.1)
-    // filter.frequency.value = 20000;
-    // console.log('Hype');
+    if (filter.frequency.value != 320){
+        filter.frequency.cancelAndHoldAtTime(source.context.currentTime);
+    }
+    filter.frequency.exponentialRampToValueAtTime(20000, source.context.currentTime + 1)
 }
 
 
@@ -52,12 +53,11 @@ function lowEnergy(){
     var i = 20000;
     gainNode.gain.value = defaultGain;
 
-
-    filter.frequency.value = 20000;
-    filter.frequency.exponentialRampToValueAtTime(320, source.context.currentTime + 0.1)
-    
-    // filter.frequency.value = 320;
-    // console.log('Low');
+    if (filter.frequency.value != 20000){
+        filter.frequency.cancelAndHoldAtTime(source.context.currentTime);
+    }
+    filter.frequency.exponentialRampToValueAtTime(320, source.context.currentTime + 0.2)
+    // console.log(filter.frequency.value)
 }
 
 function frequencyRampStop(){

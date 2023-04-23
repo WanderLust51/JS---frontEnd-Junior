@@ -17,9 +17,13 @@
     
 
 
-    <div class="center" onmouseenter="highEnergy()" onmouseleave="lowEnergy()">
+    <div id="love1" class="center d-flex" onmouseenter="highEnergy()" onmouseleave="lowEnergy()">
         <h2 id="love">♥&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;♥</h2>
         <h1 id="happiness">X ͜  &nbsp; X</h1>
+    </div>
+    <div id="love2" class="center d-none" onmouseenter="highEnergy()" onmouseleave="lowEnergy()">
+        <h2 id="love" class="fw-light">#&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;#</h2>
+        <h1 id="happiness">♥ ͜  &nbsp; ♥</h1>
     </div>
     <div class="content">
         <div class="line" style="display: none;">
@@ -48,10 +52,15 @@
 
             $('#btn1').click(function(){
                 if (!($('#track1').hasClass('d-flex'))){
-                    $('#track2').removeClass('d-flex')
-                    $('#track2').addClass('d-none')
+                    $('#track2').removeClass('d-flex');
+                    $('#track2').addClass('d-none');
                     $('#track1').removeClass('d-none');
                     $('#track1').addClass('d-flex');
+
+                    $('#love2').removeClass('d-flex');
+                    $('#love2').addClass('d-none');
+                    $('#love1').removeClass('d-none');
+                    $('#love1').addClass('d-flex');
                     document.getElementById('track2').pause();
 
                     audioElement = document.getElementById('track1');
@@ -69,6 +78,11 @@
                     $('#track1').addClass('d-none')
                     $('#track2').removeClass('d-none');
                     $('#track2').addClass('d-flex');
+
+                    $('#love1').removeClass('d-flex');
+                    $('#love1').addClass('d-none');
+                    $('#love2').removeClass('d-none');
+                    $('#love2').addClass('d-flex');
                     document.getElementById('track1').pause();
                 
                     audioElement = document.getElementById('track2');

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <title>R e a l &nbsp;&nbsp; s p r i n g</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    </head>
+    <body class="d-flex flex-column align-items-center">
+
+        <form action="" id="myForm" class="mt-5 w-75 d-flex flex-column align-items-center">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="nombre" placeholder="Otoniel">
+                <label for="floatingInput">Otoniel</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingInput" name="contraseña" placeholder="12345">
+                <label for="floatingInput">Contraseña</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="cuenta" placeholder="clave">
+                <label for="floatingInput">Clave de cuenta bancaria</label>
+            </div>
+            <input type="button" class="btn btn-primary" role="button" value="Registro" onclick="registro()">
+        </form>
+        
+        <script src="objectscript.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+    
+        <div id="juego" class="d-none mt-5 w-75 flex-column align-items-center p-2 bg-success text-dark bg-opacity-25 rounded-3 shadow-sm">
+            <p></p>
+
+            <style>
+                #juego > button{
+                    height: 15rem;
+                    transition-duration: 0s;
+                }
+                #juego > button:active{
+                    transition-duration: 0s;
+                    background-color: #11633b;
+                    box-shadow: 0 0 30px 5px white !important;
+                }
+            </style>
+            <button role="button" class="btn d-flex btn-success rounded-2 shadow-sm text-white w-50 mt-4 mb-5 justify-content-center align-items-center" style="">
+                <i>clickeame!</i>
+            </button>
+
+            <h3></h3>
+        </div>
+    
+    
+    </body>
+</html>

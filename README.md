@@ -13,4 +13,6 @@ Está alojada en la rama Energy y es visíble para el público gracias a GitHub 
 
 <a href="https://wanderlust51.github.io/JS-frontEnd-Junior/">Click aquí!</a><br>
 
+<img src="media/energydemo.png">
+
 (Es necesario tocar el botón de chill "-&nbsp; ͜  &nbsp;-" para que funcione, debído a políticas de google chrome)

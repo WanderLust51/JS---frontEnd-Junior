@@ -1,6 +1,19 @@
+let isBloody = false;
+
+let limitS = 10
+let limitMs = limitS * 1000;
+
 $(document).ready(function(){
 
-    $('#juego > button').click(punch);
+    mostrarBotonFinal(false);
+
+
+    $('#bloody').click(function(){
+        isBloody = $('#bloody')[0].checked;
+    })
+
+    $('#finalBtn').click(launch)
+
     
     
 })
@@ -16,13 +29,14 @@ class Jugador{
     }
 
     scoreup(){
-        console.log('ñlasjdfñldsafgñldsaflgjsdlkfgjlksjdfg');
-        this.puntaje += 1
+        this.puntaje += 1;
     }
     setscore(score){
         this.puntaje = score;
     }
 }
+
+// GLOBAL
 var player = '';
 
 function registro(){
@@ -33,27 +47,66 @@ function registro(){
     cuenta = $('#myForm')[0].cuenta.value;
 
     player = new Jugador(nombre,contraseña,cuenta);
-    console.log(player)
     
-    launch(player);
+    launch();
     hideRegister();
 
 }
 
-function launch(player){
+function launch(){
+    mostrarBotonFinal(false);
+
     if ($('#juego').hasClass('d-none')){
         $('#juego').removeClass('d-none');
         $('#juego').addClass('d-flex');
     }
-    $('#juego > p').append(`Hola ${player.nombre}, Pegale al botón el botón!`);
+    if (!isBloody){
+        $('#juego > p').text(`Hi ${player.nombre}, hit the button!`);
+        $('#juego > button').addClass('gamehit');
+    }else{
+        $('#juego > p').text(`Hi ${player.nombre}, hit the frog!!`);
+        $('#juego > div').addClass('gamehit');
+    }
+    $('#juego > .gamehit').removeClass('d-none').addClass('d-flex');
+    if ($('#juego > .gamehit')[0].localName == 'button'){
+        $('#juego > .gamehit').addClass('btn');
+    }
+    $('#juego > .gamehit').click(punch);
 }
 
 function hideRegister(){
-    $('#myForm').removeClass('d-flex')
-    $('#myForm').addClass('d-none')
+    $('#myForm').removeClass('d-flex');
+    $('#myForm').addClass('d-none');
 }
 
 function punch(){
     player.scoreup();
+
+    if (player.puntaje == 1){
+
+        $('#progress').animate({
+            width: 0
+        }, limitMs)
+        setTimeout(finish,limitMs);
+    }
+
     $('#juego > h3').text(player.puntaje);
+}
+
+function finish(){
+    
+    $('#finalDiv > h1').text(`Tu puntaje fué de ${player.puntaje}!!!`)
+
+    mostrarBotonFinal(true);
+}
+
+// CAMBIAR ESTADO DEL BOTÓN FINAL
+function mostrarBotonFinal(valor){
+    if (valor){
+        $('#finalBtn').addClass('d-flex');
+        $('#finalBtn').removeClass('d-none');
+    }else{
+        $('#finalBtn').removeClass('d-flex');
+        $('#finalBtn').addClass('d-none');
+    }
 }

@@ -23,14 +23,18 @@
                 <input type="text" class="form-control" id="floatingInput" name="cuenta" placeholder="clave">
                 <label for="floatingInput">Clave de cuenta bancaria</label>
             </div>
-            <input type="button" class="btn btn-primary" role="button" value="Registro" onclick="registro()">
+            <div class="form-check form-switch my-2">
+                <input class="form-check-input" type="checkbox" role="switch" id="bloody">
+                <label class="form-check-label" for="bloody">Modo sangriento (ง'̀-'́)ง</label>
+              </div>
+            <input type="button" class="btn btn-primary mt-3" role="button" value="Registro" onclick="registro()">
         </form>
         
         <script src="objectscript.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     
     
-        <div id="juego" class="d-none mt-5 w-75 flex-column align-items-center p-2 bg-success text-dark bg-opacity-25 rounded-3 shadow-sm">
+        <div id="juego" class="d-none mt-5 w-75 flex-column align-items-center py-2 bg-success text-dark bg-opacity-25 rounded-3 shadow-sm">
             <p></p>
 
             <style>
@@ -43,14 +47,45 @@
                     background-color: #11633b;
                     box-shadow: 0 0 30px 5px white !important;
                 }
+                #juego > div{
+                    height: 18rem;
+                    transition-duration: 0.1s;
+                }
+                #juego > div:active{
+                    filter:brightness(80%);
+                    transition-duration: 0s;
+                }
+                #juego > div > img{
+                    height: 100%;
+                    position: absolute;
+                }
+                #juego > div > i{
+                    z-index: 10;
+                    position: relative;
+                    top: -30px;
+                }
             </style>
-            <button role="button" class="btn d-flex btn-success rounded-2 shadow-sm text-white w-50 mt-4 mb-5 justify-content-center align-items-center" style="">
-                <i>clickeame!</i>
+            <button role="button" class="d-none btn-success rounded-2 shadow-sm text-white w-50 mt-4 mb-5 justify-content-center align-items-center">
+                <i>click on me!</i>
             </button>
+            <div class="d-none position-relative text-white w-50 mt-4 mb-5 justify-content-center align-items-center">
+                <img src="media/Frog.png" alt="">
+                <i>omg no me pegues por favor!</i>
+            </div>
 
             <h3></h3>
+
+            <section class="my-3 w-100">
+                <div id="progress" class="py-3 bg-success bg-opacity-25" style="width: 100%;"></div>
+            </section>
         </div>
     
-    
+        
     </body>
+
+    <div id="finalDiv" class="mt-5">
+        <h1></h1>
+    </div>
+    <button id="finalBtn" role="button" class="btn d-none btn-success mt-5">Empezar de nuevo!</button>
+    
 </html>

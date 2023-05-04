@@ -1,5 +1,6 @@
 let isBloody = false;
 
+// TIEMPO DE JUEGO
 let limitS = 10
 let limitMs = limitS * 1000;
 
@@ -12,11 +13,14 @@ $(document).ready(function(){
         isBloody = $('#bloody')[0].checked;
     })
 
-    $('#finalBtn').click(launch)
+    $('#finalBtn').click(launch);
+
 
     
     
 })
+
+
 
 // Constructor del jugador
 
@@ -26,6 +30,7 @@ class Jugador{
         this.contraseña = b;
         this.cuenta = c;
         this.puntaje = 0;
+        this.record = 0;
     }
 
     scoreup(){
@@ -33,6 +38,11 @@ class Jugador{
     }
     setscore(score){
         this.puntaje = score;
+    }
+    updateRecord(){
+        if (this.puntaje > this.record){
+            this.record = this.puntaje;
+        }
     }
 }
 
@@ -50,11 +60,14 @@ function registro(){
     
     launch();
     hideRegister();
+    
 
 }
 
 function launch(){
     mostrarBotonFinal(false);
+    player.puntaje = 0;
+    $('#progress').css('width', '100%');
 
     if ($('#juego').hasClass('d-none')){
         $('#juego').removeClass('d-none');
@@ -94,8 +107,11 @@ function punch(){
 }
 
 function finish(){
+    $("#juego > .gamehit").unbind('click');
+    player.updateRecord();
     
     $('#finalDiv > h1').text(`Tu puntaje fué de ${player.puntaje}!!!`)
+    $('#record > p').text(`Record actual: ${player.record}!!!`)
 
     mostrarBotonFinal(true);
 }

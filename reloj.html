@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        body > div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            width: 100%;
+        }
+        div > div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem 0;
+        }
+        div > div:first-of-type{
+            font-size: 7rem;
+        }
+        div > div:first-of-type > *{
+            margin: 0 1.2rem;
+        }
+        div > *{
+            display: flex;
+            margin: 0 0.5rem;
+        }
+        
+    </style>
+</head>
+<body>
+
+    
+
+    <div>
+        <div>
+            <h1></h1>
+            <b>:</b>
+            <h1></h1>
+            <b>:</b>
+            <h1></h1>
+        </div>
+        <div>
+            <h1></h1>
+            <b>-</b>
+            <h1></h1>
+            <b>-</b>
+            <h1></h1>
+        </div>
+    </div>
+    
+
+    <script>
+        let date;
+
+        date = new Date();
+        $('div:nth-of-type(2) > h1:nth-of-type(1)').text(date.getUTCDate());
+        $('div:nth-of-type(2) > h1:nth-of-type(2)').text(date.getUTCMonth());
+        $('div:nth-of-type(2) > h1:nth-of-type(3)').text(date.getFullYear());
+        $('div:nth-of-type(1) > h1:nth-of-type(1)').text(date.getHours());
+        $('div:nth-of-type(1) > h1:nth-of-type(2)').text(date.getMinutes());
+        $('div:nth-of-type(1) > h1:nth-of-type(3)').text(date.getSeconds());
+
+        
+        setInterval(update,1000);
+
+        function update(){
+            date = new Date();
+            $('div:nth-of-type(2) > h1:nth-of-type(1)').text(date.getUTCDate());
+            $('div:nth-of-type(2) > h1:nth-of-type(2)').text(date.getUTCMonth());
+            $('div:nth-of-type(2) > h1:nth-of-type(3)').text(date.getFullYear());
+            $('div:nth-of-type(1) > h1:nth-of-type(1)').text(date.getHours());
+            $('div:nth-of-type(1) > h1:nth-of-type(2)').text(date.getMinutes()); addZero($('div:nth-of-type(1) > h1:nth-of-type(2)'));
+            $('div:nth-of-type(1) > h1:nth-of-type(3)').text(date.getSeconds()); addZero($('div:nth-of-type(1) > h1:nth-of-type(3)'));
+        }
+
+        function addZero(element){
+            let text = element.text()
+            if (text.length == 1){
+                element.prepend('0');
+            }
+            console.log(text);
+        }
+
+    </script>
+    
+</body>
+</html>

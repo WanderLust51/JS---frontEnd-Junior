@@ -30,17 +30,19 @@ let newUser = {
 
 $(document).ready(function(){
 
-    $('#myForm > button').click(inicio)
+    $('#myForm > button').click(inicio);
 
 
 })
 
 function inicio(){
     event.preventDefault();
-    console.log(usuarios);
-    user = $('#myForm')[0].nombre.value;
-    let encontrado = usuarios.find(e => e.username === user);
+    // console.log(usuarios);
+    userLogin = $('#myForm')[0].nombre.value;
+    let encontrado = usuarios.find(e => e.username === userLogin);
+    // let userObj = usuarios
     if (encontrado){
+        user = objOfUsername(userLogin, usuarios);
         inicioDeSesion(user);
 
     }else{
@@ -51,10 +53,26 @@ function inicio(){
 
 function inicioDeSesion(user){
     $('#b').text('Iniciaste desgraciado.');
-    $('body > div > p').text(`omg is ${user}`);
+    $('body > div > p').text(`omg is ${user.username}`);
 
-    
+    guardarDatos(user);
 }
 
+function guardarDatos(user){
+    let item = JSON.stringify({
+        'username': user.username,
+        'password': user.password
+    });
+    localStorage.setItem('loggedUser', item);
+}
+
+function objOfUsername(username, usuarios){
+    for (e in usuarios){
+        if (username == usuarios[e].username){
+            userObj = usuarios[e];
+            return userObj
+        } 
+     }
+}
 
 
